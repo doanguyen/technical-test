@@ -5,9 +5,10 @@ description = "KPI-Inteligence techincal test"
 authors = ["VD"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 django = "^3.1.7"
 djangorestframework = "^3.12.2"
+gunicorn = "^20.0.4"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.812"
