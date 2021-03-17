@@ -1,0 +1,23 @@
+.mat-column-map {
+  border-left: 1px solid #e0e0e0;
+}
+
+.mat-column-codeuai {
+  border-right: 1px solid #e0e0e0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+
+  table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+
+    .mat-cell,
+    .mat-header-cell {
+      padding: 4px 8px;
+    }
+  }
+}

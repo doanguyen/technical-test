@@ -1,0 +1,18 @@
+ul {
+  text-align: center;
+  > li {
+    display: inline-block;
+    zoom: 1;
+    padding: 16px;
+
+    a {
+      text-decoration: none;
+      color: #7e7e7e;
+
+      &.active {
+        color: black;
+        font-size: larger;
+      }
+    }
+  }
+}
