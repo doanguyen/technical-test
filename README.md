@@ -39,6 +39,19 @@ Implement a simple web application to show the investments:
 * Create a repository on GitHub to store your source code and send us the link by e-mail once you've finished
 * Please provide a `README` with instructions to run your project
 
+## Setup
+
+All that needs is to have docker/docker-compose installed. It can be up and running just by:
+
+`docker-compose up`
+
+It should take some minutes to build the docker images.
+
+Some screenshots:
+
+![1](screenshots/1.png)
+![2](screenshots/2.png)
+![3](screenshots/3.png)
 ## License
 
 This project is released under the MIT License.
