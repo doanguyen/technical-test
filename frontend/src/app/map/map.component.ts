@@ -9,9 +9,9 @@ import { Tile as TileLayer, Vector as VectorLayer } from "ol/layer";
 import { InvestmentService } from "../investment.service";
 import { filter, map, take } from "rxjs/operators";
 import * as olProj from "ol/proj";
+import { transform } from "ol/proj";
 import IconAnchorUnits from "ol/style/IconAnchorUnits";
 import { OSM } from "ol/source";
-import { transform } from "ol/proj";
 import { Subscription } from "rxjs";
 import { MatDialog } from "@angular/material/dialog";
 import { Investment } from "../models";
@@ -30,7 +30,6 @@ export class MapComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const icon = "http://maps.google.com/mapfiles/ms/micons/blue.png";
-    this.iv.getInvestment(1, 300);
     this.subscription = this.iv.investments
       .pipe(
         filter(ir => !!ir), // non-empty InvestmentResponse
@@ -67,15 +66,13 @@ export class MapComponent implements OnInit, OnDestroy {
         const vectorLayer = new VectorLayer({
           source: vectorSource
         });
+        const osmLayer = new TileLayer({
+          source: new OSM()
+        });
 
         this.map = new Map({
           target: "map",
-          layers: [
-            new TileLayer({
-              source: new OSM()
-            }),
-            vectorLayer
-          ],
+          layers: [osmLayer, vectorLayer],
           view: new View({
             center: olProj.fromLonLat([2.39150432700006, 48.846753735]),
             zoom: 10
@@ -90,16 +87,13 @@ export class MapComponent implements OnInit, OnDestroy {
           }
         });
       });
+    this.iv.getInvestment(1, 50);
   }
 
   openDialog(data: Investment): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    this.dialog.open(DialogComponent, {
       width: "450px",
       data
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
     });
   }
 

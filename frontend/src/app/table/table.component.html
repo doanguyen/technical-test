@@ -33,7 +33,7 @@
   >
     <table
       mat-table
-      [dataSource]="filteredAndPagedInvestments | async"
+      [dataSource]="filteredAndPagedInvestments"
       class="table"
       matSort
       matSortDisableClear
@@ -173,7 +173,7 @@
     <mat-paginator
       [length]="resultsLength | async"
       [pageSize]="pageSize | async"
-      (page)="fetchInvestment()"
+      (page)="getInvestment()"
     ></mat-paginator>
   </div>
 </div>

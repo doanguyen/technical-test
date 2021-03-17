@@ -13,12 +13,13 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { ModifyComponent } from './modify/modify.component';
-import {MatInputModule} from "@angular/material/input";
-import {MatDialogModule} from "@angular/material/dialog";
+import { ModifyComponent } from "./modify/modify.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
-  declarations: [TableComponent, ModifyComponent ],
+  declarations: [TableComponent, ModifyComponent],
   imports: [
     CommonModule,
     TableRoutingModule,
@@ -33,7 +34,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatSelectModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class TableModule {}

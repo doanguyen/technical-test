@@ -26,6 +26,10 @@ export class DialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: Investment
   ) {}
 
+  /**
+   * Converting "a_b" to "A b"
+   * @param word any string
+   */
   underscoreToWord(word: string): string {
     return word.split("_").join(" ");
   }
